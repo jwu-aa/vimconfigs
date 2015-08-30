@@ -1,0 +1,52 @@
+filetype off
+call pathogen#infect()
+call pathogen#helptags()
+
+set foldmethod=indent
+set foldlevel=99
+set expandtab
+set cursorline
+set nu
+
+syntax on                           " syntax highlighing
+filetype on                          " try to detect filetypes
+filetype plugin indent on    " enable loading indent file for filetype
+filetype plugin on     " enables filetype specific plugins
+
+map <F5> :GundoToggle<CR>
+
+let g:pyflakes_use_quickfix = 0
+
+" syntastic
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_python_checkers = ['python', 'pep8', 'pyflakes']
+
+" split windows
+
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
+
+
+" taks list
+map <leader>td <Plug>TaskList
+
+" supertab
+au FileType python set omnifunc=pythoncomplete#Complete
+let g:SuperTabDefaultCompletionType = "context"
+set completeopt=menuone,longest,preview
+set runtimepath-=~/.vim/bundle/supertab
+
+" nerd
+map <leader>n :NERDTreeToggle<CR>
