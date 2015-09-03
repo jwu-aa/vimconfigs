@@ -7,7 +7,9 @@ set foldlevel=99
 set expandtab
 set cursorline
 set nu
-set mouse=nicr
+set mouse=a
+" set mouse=nicr
+
 
 syntax on                           " syntax highlighing
 filetype on                          " try to detect filetypes
@@ -24,12 +26,11 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-
-let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_python_checkers = ['python', 'pep8', 'pyflakes']
 
 " split windows
@@ -43,11 +44,25 @@ map <c-h> <c-w>h
 " taks list
 map <leader>td <Plug>TaskList
 
-" supertab
-au FileType python set omnifunc=pythoncomplete#Complete
-let g:SuperTabDefaultCompletionType = "context"
-set completeopt=menuone,longest,preview
-set runtimepath-=~/.vim/bundle/supertab
+"" supertab
+"au FileType python set omnifunc=pythoncomplete#Complete
+"let g:SuperTabDefaultCompletionType = "context"
+"set completeopt=menuone,longest,preview
+"set runtimepath-=~/.vim/bundle/supertab
 
 " nerd
 map <leader>n :NERDTreeToggle<CR>
+
+" minibufexpl
+map <c-S-Right> :MBEbn<CR>
+map <c-S-Left> :MBEbp<CR>
+
+" Ropevim
+map <leader>j :RopeGotoDefinition<CR>
+map <leader>r :RopeRename<CR>
+
+" Ack 
+nmap <leader>a <Esc>:Ack!
+
+" Taglist
+nnoremap <silent> <F8> :TlistToggle<CR>
