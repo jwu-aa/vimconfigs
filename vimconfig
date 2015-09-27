@@ -9,6 +9,7 @@ set cursorline
 set nu
 set mouse=a
 " set mouse=nicr
+set noautochdir
 
 
 syntax on                           " syntax highlighing
@@ -66,3 +67,9 @@ nmap <leader>a <Esc>:Ack!
 
 " Taglist
 nnoremap <silent> <F8> :TlistToggle<CR>
+
+" CTag
+map <c-l> :ltag<CR>
+" map <c-l> :ltag<CR>:lopen<CR>
+
+" nerdcommenter
