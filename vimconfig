@@ -10,6 +10,7 @@ set nu
 set mouse=a
 " set mouse=nicr
 set noautochdir
+set hlsearch
 
 
 syntax on                           " syntax highlighing
