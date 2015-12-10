@@ -58,3 +58,6 @@
 [submodule "bundle/image"]
 	path = bundle/image
 	url = https://github.com/ashisha/image.vim
+[submodule "bundle/unite"]
+	path = bundle/unite
+	url = https://github.com/Shougo/unite.vim

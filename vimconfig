@@ -18,6 +18,9 @@ filetype on                          " try to detect filetypes
 filetype plugin indent on    " enable loading indent file for filetype
 filetype plugin on     " enables filetype specific plugins
 
+" cscope
+:cs add cscope.out
+
 map <F5> :GundoToggle<CR>
 
 let g:pyflakes_use_quickfix = 0
@@ -35,7 +38,7 @@ let g:syntastic_aggregate_errors = 1
 let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_python_checkers = ['python', 'pep8', 'pyflakes']
 
-map <c-w> :update<CR>
+" map <M-w> :update<CR>
 
 " split windows
 
@@ -75,4 +78,5 @@ nnoremap <silent> <F8> :TlistToggle<CR>
 map <c-l> :ltag<CR>
 " map <c-l> :ltag<CR>:lopen<CR>
 
-" nerdcommenter
+" unite
+nnoremap <Leader>t :Unite -start-insert file_rec<CR>
